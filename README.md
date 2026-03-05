@@ -13,6 +13,38 @@ untouched.
 
 ## Setup
 
+### Using uv (recommended)
+
+[uv](https://docs.astral.sh/uv/) creates the virtual environment and installs
+dependencies in one step.
+
+```bash
+# Install uv if you don't have it
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Clone the repo
+git clone https://github.com/evohnave/pdf-watermark-remover.git
+cd pdf-watermark-remover
+
+# Create venv and install dependencies
+uv sync
+```
+
+Optionally, install the tool itself so `remove-watermark` is available
+anywhere in the venv:
+
+```bash
+uv pip install -e .
+```
+
+Run the script without activating the venv:
+
+```bash
+uv run remove_watermark.py input.pdf "Watermark Text"
+```
+
+### Using pip
+
 ```bash
 # Clone the repo
 git clone https://github.com/evohnave/pdf-watermark-remover.git
